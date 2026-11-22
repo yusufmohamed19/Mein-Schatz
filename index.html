@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كل سنة وانتي طيبة يا هند 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Reem+Kufi:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#1b0b2e;--bg2:#3a0f4a;--pink:#ff6fa5;--gold:#ffd27a;--card:rgba(255,255,255,.08);--txt:#fff4fa}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Cairo',sans-serif;color:var(--txt);min-height:100vh;background:radial-gradient(circle at 20% 10%,#5b1a6b 0,transparent 45%),radial-gradient(circle at 85% 80%,#7a1f4f 0,transparent 45%),linear-gradient(160deg,var(--bg1),var(--bg2));background-attachment:fixed;overflow-x:hidden}
+#hearts{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.h{position:absolute;bottom:-40px;opacity:0;animation:rise linear forwards}
+@keyframes rise{10%{opacity:.8}100%{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+header{position:relative;z-index:1;text-align:center;padding:70px 20px 20px}
+.cake{font-size:68px;animation:bob 2.5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px) scale(1.06)}}
+h1{font-family:'Reem Kufi',sans-serif;font-size:clamp(34px,9vw,64px);margin:10px 0;background:linear-gradient(90deg,var(--gold),var(--pink),var(--gold));background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite}
+@keyframes shine{to{background-position:200%}}
+.grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;max-width:900px;margin:30px auto 80px;padding:0 18px}
+.tile{background:var(--card);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);border-radius:22px;padding:34px 12px;text-align:center;cursor:pointer;transition:.3s;opacity:0;transform:translateY(30px);animation:in .7s forwards;font-family:'Reem Kufi',sans-serif;font-size:28px;color:var(--gold)}
+@keyframes in{to{opacity:1;transform:none}}
+.tile:hover,.tile:active{transform:translateY(-6px) scale(1.03);border-color:var(--pink);box-shadow:0 12px 30px rgba(255,111,165,.35)}
+#modal{position:fixed;inset:0;z-index:10;background:rgba(15,4,25,.92);backdrop-filter:blur(8px);display:none;overflow-y:auto;padding:20px}
+#modal.on{display:block;animation:fade .35s}
+@keyframes fade{from{opacity:0}}
+.box{max-width:640px;margin:30px auto;background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.2);border-radius:26px;padding:28px 22px;position:relative}
+.x{position:absolute;top:12px;left:14px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:20px;cursor:pointer}
+.box h2{font-family:'Reem Kufi',sans-serif;color:var(--gold);font-size:30px;text-align:center;margin-bottom:18px}
+.msg{font-size:18px;line-height:2.1;white-space:pre-line}
+.pics{display:grid;gap:12px;margin-top:22px}
+.pw{position:relative}
+.pics img{width:100%;border-radius:18px;display:block;box-shadow:0 8px 24px rgba(0,0,0,.4);cursor:zoom-in}
+.del{position:absolute;top:8px;right:8px;width:34px;height:34px;border-radius:50%;border:0;background:rgba(220,30,80,.9);color:#fff;font-size:17px;cursor:pointer}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:24px}
+.nav button,.btn{padding:12px;border-radius:14px;border:0;font-family:inherit;font-size:16px;font-weight:600;cursor:pointer;background:linear-gradient(90deg,var(--pink),#c26bff);color:#fff}
+.nav button{flex:1}.nav button:disabled{opacity:.3}
+textarea{width:100%;min-height:180px;resize:vertical;border-radius:16px;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.25);color:#fff;font-family:inherit;font-size:18px;line-height:2;padding:14px}
+.add{display:block;text-align:center;margin-top:14px}
+.bar{position:fixed;top:0;left:0;right:0;z-index:30;background:#111;color:#fff;padding:8px 12px;display:flex;gap:10px;align-items:center;justify-content:space-between;font-size:14px}
+.bar .btn{padding:8px 14px;font-size:14px}
+body.edit header{padding-top:90px}
+.cd{position:relative;z-index:1;text-align:center;padding:20px 18px 80px}
+.cd p{font-size:clamp(17px,4.5vw,22px);margin-bottom:26px;line-height:1.9}
+.boxes{display:flex;gap:12px;justify-content:center;direction:rtl}
+.boxes div{min-width:74px;padding:16px 8px;border-radius:20px;background:var(--card);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(10px)}
+.boxes b{display:block;font-family:'Reem Kufi',sans-serif;font-size:clamp(28px,8vw,44px);color:var(--gold);font-variant-numeric:tabular-nums}
+.boxes span{font-size:14px;opacity:.8}
+#lb{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;padding:10px}
+#lb.on{display:flex}#lb img{max-width:100%;max-height:100%;border-radius:12px}
+</style>
+<script src="content.js"></script>
+</head>
+<body>
+<div id="hearts"></div>
+<header>
+  <div class="cake">🎂</div>
+  <h1>كل سنة وانتي طيبة يا هند</h1>
+</header>
+<div class="grid" id="grid"></div>
+<div id="modal"><div class="box" id="box"></div></div>
+<div id="lb"><img id="lbimg" alt=""></div>
+
+<script>
+const ORD=["أولاً","ثانياً","ثالثاً","رابعاً","خامساً","سادساً","سابعاً","ثامناً","تاسعاً","عاشراً"];
+/* وضع التعديل: افتح الموقع بـ  index.html#edit  (الرابط العادي اللي هتبعتهالها مفيهوش تعديل) */
+const EDIT=/[?&#]edit/.test(location.search+location.hash);
+const $=id=>document.getElementById(id);
+const grid=$('grid'),modal=$('modal'),box=$('box'),lb=$('lb');
+let D=null,cur=0;
+const blank=()=>Array.from({length:10},()=>({text:"",photos:[]}));
+function idb(mode,fn){return new Promise((res,rej)=>{try{const r=indexedDB.open('hend-bday',1);r.onupgradeneeded=()=>r.result.createObjectStore('k');r.onsuccess=()=>{const t=r.result.transaction('k',mode),q=fn(t.objectStore('k'));t.oncomplete=()=>res(q&&q.result);t.onerror=()=>rej(t.error)};r.onerror=()=>rej(r.error)}catch(e){rej(e)}})}
+let st;function save(){clearTimeout(st);st=setTimeout(()=>idb('readwrite',o=>o.put(D,'d')).catch(()=>alert('تعذر الحفظ التلقائي على المتصفح، نزّل الملف دلوقتي')),300)}
+function esc(t){return t.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+
+async function init(){
+  let draft=null;
+  if(EDIT){try{draft=await idb('readonly',o=>o.get('d'))}catch(e){}}
+  D=(EDIT&&draft)||window.SAVED||blank();
+  while(D.length<10)D.push({text:"",photos:[]});
+  if(EDIT){document.body.classList.add('edit');
+    const b=document.createElement('div');b.className='bar';
+    b.innerHTML='<span>✏️ وضع التعديل - بيتحفظ تلقائي</span><button class="btn" id="dl">⬇ تنزيل content.js للرفع</button>';
+    document.body.appendChild(b);$('dl').onclick=exportFile}
+  if(EDIT||Date.now()>=OPEN_AT)reveal();else countdown();
+}
+/* موعد الفتح: ٢٣ نوفمبر ٢٠٢٦ الساعة ١٢ بالليل بتوقيت القاهرة */
+const OPEN_AT=new Date('2026-11-23T00:00:00+02:00').getTime();
+function reveal(){
+  const c=$('cd');if(c)c.remove();
+  grid.innerHTML='';
+  ORD.forEach((o,i)=>{const d=document.createElement('div');d.className='tile';d.style.animationDelay=(i*.08)+'s';d.textContent=o;d.onclick=()=>openSec(i,true);grid.appendChild(d)});
+  burst();setTimeout(burst,900);
+}
+function countdown(){
+  const c=document.createElement('div');c.id='cd';c.className='cd';
+  c.innerHTML='<p>مفاجأتك هتتفتح الساعة ١٢ بالليل 🤍</p><div class="boxes">'+['ثانية','دقيقة','ساعة','يوم'].map((l,i)=>`<div><b id="c${3-i}">00</b><span>${l}</span></div>`).reverse().join('')+'</div>';
+  grid.before(c);
+  const t=setInterval(()=>{
+    let r=Math.max(0,OPEN_AT-Date.now());
+    if(r<=0){clearInterval(t);reveal();return}
+    const v=[Math.floor(r/864e5),Math.floor(r%864e5/36e5),Math.floor(r%36e5/6e4),Math.floor(r%6e4/1e3)];
+    v.forEach((n,k)=>{$('c'+k).textContent=String(n).padStart(2,'0')});
+  },250);
+}
+function openSec(i,fx){
+  cur=i;const s=D[i];
+  const pics=s.photos.map((p,k)=>`<div class="pw"><img src="${p}" alt="">${EDIT?`<button class="del" data-k="${k}">✕</button>`:''}</div>`).join('');
+  const body=EDIT?`<textarea id="ta" placeholder="اكتب كلامك هنا...">${esc(s.text)}</textarea>`:`<div class="msg">${esc(s.text)}</div>`;
+  const add=EDIT?`<label class="btn add">📷 إضافة صور<input id="fi" type="file" accept="image/*" multiple hidden></label>`:'';
+  box.innerHTML=`<button class="x" onclick="closeM()">✕</button><h2>${ORD[i]}</h2>${body}<div class="pics">${pics}</div>${add}
+  <div class="nav"><button ${i==9?'disabled':''} onclick="openSec(${i+1},true);modal.scrollTop=0">التالي ←</button><button ${i==0?'disabled':''} onclick="openSec(${i-1},true);modal.scrollTop=0">→ السابق</button></div>`;
+  modal.classList.add('on');document.body.style.overflow='hidden';
+  box.querySelectorAll('.pics img').forEach(im=>im.onclick=()=>{$('lbimg').src=im.src;lb.classList.add('on')});
+  if(EDIT){
+    $('ta').oninput=e=>{D[cur].text=e.target.value;save()};
+    box.querySelectorAll('.del').forEach(b=>b.onclick=e=>{e.stopPropagation();if(confirm('تمسح الصورة؟')){D[cur].photos.splice(+b.dataset.k,1);save();openSec(cur)}});
+    $('fi').onchange=async e=>{for(const f of e.target.files)D[cur].photos.push(await shrink(f));save();openSec(cur)};
+  }
+  if(fx)burst();
+}
+function shrink(f){return new Promise(res=>{const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const m=1100,k=Math.min(1,m/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',.8))};im.src=r.result};r.readAsDataURL(f)})}
+function exportFile(){
+  const b=new Blob(['window.SAVED='+JSON.stringify(D)+';'],{type:'text/javascript'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='content.js';a.click();
+}
+function closeM(){modal.classList.remove('on');document.body.style.overflow=''}
+lb.onclick=()=>lb.classList.remove('on');
+modal.onclick=e=>{if(e.target===modal)closeM()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){lb.classList.remove('on');closeM()}});
+const hc=$('hearts'),icons=['💗','💖','✨','🌸','💕'];
+function heart(){const h=document.createElement('span');h.className='h';h.textContent=icons[Math.random()*icons.length|0];
+  h.style.left=Math.random()*100+'%';h.style.fontSize=(14+Math.random()*22)+'px';h.style.animationDuration=(6+Math.random()*6)+'s';
+  hc.appendChild(h);setTimeout(()=>h.remove(),12500)}
+function burst(){for(let i=0;i<8;i++)setTimeout(heart,i*90)}
+setInterval(heart,700);
+init();
+</script>
+</body>
+</html>
